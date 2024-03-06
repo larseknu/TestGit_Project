@@ -1,7 +1,7 @@
 import random
 
 # TODO: Read from file?
-words = ["World", "Pineapple", "Cat", "Python", "Armadillo", "Boat"]
+words = ["World", "Pineapple", "Cat", "Python", "Armadillo", "Boat", "Mario"]
 
 word_to_guess = words[random.randrange(0, len(words))]
 
