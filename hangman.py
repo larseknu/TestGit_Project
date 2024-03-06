@@ -60,5 +60,11 @@ while "_" in hint and lives > 0:
         print(f"You lost! You have {lives} lives left.")
         print(f"You got: {''.join(hint).capitalize()}")
         print(f"The word was: {word_to_guess}")
+        play_again = input("Play again (Y/N)?")
+        if play_again == "Y":
+            hint = ["_"] * len(word_to_guess)
+            lives = max_lives
+
+            
 
     # TODO: Play again?
