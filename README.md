@@ -1,4 +1,4 @@
-# Nito_TestGit_Project
+# TestGit_Project
 
 This is the first Git-example project.
 
