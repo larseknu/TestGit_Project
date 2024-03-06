@@ -1,5 +1,4 @@
 import random
-import sys
 
 # TODO: Read from file?
 words = ["World", "Pineapple", "Cat", "Python", "Armadillo"]
@@ -17,8 +16,17 @@ current_body_parts = ["", "", "",  "",  "", ""]
 # Removed this line, have it at the top of the loop
 # print(f"Hint: {''.join(hint).capitalize()}")
 
-lives = 6
-max_lives = 6
+
+max_lives = len(body_parts)
+lives = max_lives
+
+def should_we_play_again(words):
+    play_again = input("Play again (Y/N)?")
+    if play_again == "Y":
+        return ["_"] * len(words[random.randrange(0, len(words))]), max_lives, ["", "", "",  "",  "", ""]
+    else:
+        return "_", 0, [""]
+
 
 while "_" in hint and lives > 0:
     # Print the hangman
@@ -60,11 +68,6 @@ while "_" in hint and lives > 0:
         print(f"You lost! You have {lives} lives left.")
         print(f"You got: {''.join(hint).capitalize()}")
         print(f"The word was: {word_to_guess}")
-        play_again = input("Play again (Y/N)?")
-        if play_again == "Y":
-            hint = ["_"] * len(word_to_guess)
-            lives = max_lives
-
-            
+        hint, lives, current_body_parts = should_we_play_again(words)
 
     # TODO: Play again?
